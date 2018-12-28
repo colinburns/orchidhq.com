@@ -1,0 +1,51 @@
+@vertical-gap: @grid-gutter-width / 2;
+
+p.message{
+	padding: 15px;
+	.bg-info;
+	&.bad{
+		.bg-danger;
+	}
+	&.warning{
+		.bg-warning;
+	}
+	&.good{
+		.bg-success;
+	}
+}
+
+form{
+	.Actions{
+		margin-top: @vertical-gap;
+	}
+	textarea{
+		resize: none;
+	}
+	&.form-inline{
+		.field, .Actions, .controls, fieldset{
+			display: inline-block;
+		}
+		.Actions{
+			margin-top: 0;
+		}
+	}
+}
+
+.form-group{
+	&.holder-validation{
+		.has-error;
+	}
+}
+
+.actionsrow{
+	margin: @vertical-gap 0;
+}
+
+.form-inline.form-always-inline{
+	.form-group, fieldset, .form-control {
+		display: inline-block;
+	}
+	.form-control{
+		width: auto;
+	}
+}

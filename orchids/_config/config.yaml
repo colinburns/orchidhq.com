@@ -1,0 +1,11 @@
+---
+Name: routing for the CRUD page for Orchid HQ
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    'dash/$Action/$ID/$OtherID': 'OrchidListPage_Controller'
+    'view/$Action/$ID/$OtherID': 'OrchidViewController'
+    'edit/$Action/$ID/$OtherID': 'OrchidEditController'
+    'create/$Action/$ID/$OtherID': 'OrchidCreatePage_Controller'
+    'delete/$Action/$ID/$OtherID': 'OrchidDeleteController'
