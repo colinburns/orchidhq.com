@@ -4,6 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <% require themedCSS(site) %>
+<% require themedCSS(orchid) %>
 <% include Head %>
 	<body class="$ClassName">
 		<% include Header %>

@@ -11,7 +11,8 @@ class Orchid extends DataObject {
         'Type' => 'Varchar(255)',
         'CommonName' => 'Varchar(255)',
         'FlowerColour' => 'Varchar(255)', // We can have multiple colours stored in a single field. We'll display this as a list the user can check if colour included
-        'FloweringMonth' => 'Varchar(255)' // We can have multiple months stored in a single field. These will be stored a comma separated data.
+        'FloweringMonth' => 'Varchar(255)', // We can have multiple months stored in a single field. These will be stored a comma separated data.
+        'Notes' => 'Text'
     );
 
     private static $has_one = array(
@@ -28,6 +29,14 @@ class Orchid extends DataObject {
             'value' => 'PotNumber'
         )
     );
+
+    public function FlowerColourDisplay() {
+        return implode(", ", json_decode($this->FlowerColour, true));
+    }
+
+    public function FloweringMonthDisplay() {
+        return implode(", ", json_decode($this->FloweringMonth, true));
+    }
 
     public function canView($member = null) {
         return Permission::check("CMS_ACCESS_LeftAndMain");

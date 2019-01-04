@@ -5,6 +5,7 @@
 _ss_environment.php
 
 # ignore composer vendor folder
+/.idea/
 /vendor/
 /framework/
 /cms/

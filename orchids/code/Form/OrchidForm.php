@@ -24,6 +24,7 @@ class OrchidForm extends Form {
             $commonNameField = TextField::create('CommonName', 'Common Name')->setAttribute('placeholder', 'Enter the common name of the orchid')->setValue($Orchid->CommonName);
             $flowerColour = CheckboxSetField::create('FlowerColour', 'Flower Colour')->setSource($colourSelection)->setValue(json_decode($Orchid->FlowerColour));
             $floweringMonth = CheckboxSetField::create('FloweringMonth', 'Flowering Month')->setSource($monthSelection)->setValue(json_decode($Orchid->FloweringMonth));
+            $notes = TextareaField::create('Notes', 'Notes')->setValue($Orchid->Notes);
         } else {
             $idField = HiddenField::create('OrchidID', 'OrchidID')->setValue(0);
             $currentImage = LiteralField::create('CurrentImage', '');
@@ -34,6 +35,7 @@ class OrchidForm extends Form {
             $commonNameField = TextField::create('CommonName', 'Common Name')->setAttribute('placeholder', 'Enter the common name of the orchid');
             $flowerColour = CheckboxSetField::create('FlowerColour', 'Flowering Colour')->setSource($colourSelection);
             $floweringMonth = CheckboxSetField::create('FloweringMonth', 'Flowering Month')->setSource($monthSelection);
+            $notes = TextareaField::create('Notes', 'Notes');
         }
 
         $fields = new FieldList(
@@ -45,7 +47,8 @@ class OrchidForm extends Form {
             $typeField,
             $commonNameField,
             $flowerColour,
-            $floweringMonth
+            $floweringMonth,
+            $notes
         );
 
         $actions = new FieldList(

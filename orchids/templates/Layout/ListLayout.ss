@@ -18,10 +18,8 @@
                             <th>Thumbnail</th>
                             <th>Pot Number</th>
                             <th>Breed</th>
-                            <th>Type</th>
                             <th>Common Name</th>
                             <th>Flower Colour</th>
-                            <th>Flowering Month</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -29,20 +27,18 @@
 				<% loop $Orchids %>
                         <tr role="row" class="$EvenOdd">
                             <td style="text-align:center;">
-                                <a href="/orchid/view/{$ID}">
-                                    <img src="assets/orchid-photos/{$OrchidPhoto.FileName}" style="max-height:100px;" />
+                                <a href="/orchid/view/{$ID}" style="text-decoration: none;">
+                                    <img src="assets/orchid-photos/{$OrchidPhoto.FileName}" style="max-height:150px;" />
                                 </a>
                             </td>
                             <td>$PotNumber</td>
                             <td>$Breed</td>
-                            <td>$Type</td>
                             <td>$CommonName</td>
-                            <td>$FlowerColour</td>
-                            <td>$FloweringMonth</td>
+                            <td>$FlowerColourDisplay</td>
                             <td style="text-align:center;">
-                                <a href="/orchid/view/{$ID}"><i class="fas fa-file-image" style="font-size:20px;margin:0 2px;"></i></a>
-                                <a href="/orchid/edit/{$ID}"><i class="fas fa-edit" style="font-size:20px;margin:0 2px;"></i></a>
-                                <a href="/orchid/delete/{$ID}" class="delete"><i class="fas fa-trash" style="font-size:20px;margin:0 2px;"></i></a>
+                                <a href="/orchid/view/{$ID}" style="text-decoration: none;"><i class="fas fa-file-image" style="font-size:20px;margin:0 2px;"></i></a>
+                                <a href="/orchid/edit/{$ID}" style="text-decoration: none;"><i class="fas fa-edit" style="font-size:20px;margin:0 2px;"></i></a>
+                                <a href="/orchid/delete/{$ID}" class="delete" style="text-decoration: none;"><i class="fas fa-trash" style="font-size:20px;margin:0 2px;"></i></a>
                             </td>
                         </tr>
                 <% end_loop %>

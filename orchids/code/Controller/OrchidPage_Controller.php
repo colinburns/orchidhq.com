@@ -92,6 +92,7 @@ class OrchidPage_Controller extends Page_Controller
         $orchid->CommonName = $this->request->postVar('CommonName');
         $orchid->FlowerColour = json_encode(array_values($this->request->postVar('FlowerColour')));
         $orchid->FloweringMonth = json_encode(array_values($this->request->postVar('FloweringMonth')));
+        $orchid->Notes = $this->request->postVar('Notes');
 
 //        try {
             if ($recordId = $orchid->write()) {
@@ -146,13 +147,11 @@ class OrchidPage_Controller extends Page_Controller
 
     public function OrchidView()
     {
-        die('View a single orchid record');
-//        $renderedContent = $this->customise(array(
-//            'INIMDetail' => $inimDetail,
-//            'ProductDetails' => $products,
-//            'UserDetails' => $userDetails,
-//            'share_url' => $share_url
-//        ))->renderWith('OrderListLayout');
+        $OrchidID = $this->request->param('OrchidID');
+        $Orchid = Orchid::get()->byID($OrchidID);
+        return $this->customise(array(
+            'Orchid' => $Orchid
+        ))->renderWith('ViewLayout');
     }
     public function OrchidDelete()
     {
